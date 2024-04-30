@@ -1,3 +1,5 @@
+package com.oraclealura.exchangerateapi;
+
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -10,9 +12,9 @@ public class ConsultaDivisa {
 
     /*
     * Metodo para consultar al API exchangenerate la divisa */
-    Divisa buscaDivisa(String divisaBase, String divisaObjetivo){
+    public Divisa buscaDivisa(String divisaBase, String divisaObjetivo, String monto){
 
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/5a376f923fa926a6ccd8ab1b/pair/"+divisaBase+"/"+divisaObjetivo);
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/5a376f923fa926a6ccd8ab1b/pair/"+divisaBase+"/"+divisaObjetivo+"/"+monto);
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
